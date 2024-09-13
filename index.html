@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffith: The Hawk of the Millennium Empire</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.1/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #222, #111);
+    color: #eee;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .card-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  .swiper {
+    width: 60%;
+    height: auto; /* Adjust based on the square slides */
+  }
+  .swiper-slide {
+    width: 100%; /* Makes the slide full width of its container */
+    height: 0;
+    padding-top: 100%; /* Creates a square aspect ratio */
+    position: relative; /* Allows for absolute positioning of child elements */
+    overflow: hidden; /* Ensures that any overflowing image parts are hidden */
+    background: rgba(255, 255, 255, 0.1); /* Optional: background color for visibility */
+    border-radius: 10px; /* Optional: rounded corners */
+    margin: 1rem; /* Spacing around each slide */
+  }
+  .swiper-slide img {
+    position: absolute; /* Position absolute to cover the entire slide */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners matching the slide */
+  }
+  .parallax {
+    background-image: url('./images/griffith-castle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+  }
+  .parallax h2 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  .parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: -1;
+  }
+  .quote {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  .quote p {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+  }
+  .quote .author {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  .contact {
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  .contact h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .contact a {
+    color: #eee;
+    text-decoration: none;
+  }
+  .contact a:hover {
+    text-decoration: underline;
+  }
+  .footer {
+    background: #111;
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  .footer a {
+    color: #eee;
+    text-decoration: none;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #eee;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+  }
+  .scroll-up:hover {
+    background: #555;
+  }
+</style>
+
+    </style>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-purple-500 to-pink-500 py-10">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-4xl font-bold"></h1>
+        </div>
+    </header>
+
+    <section id="about" class="container py-10">
+        <h2 class="section-title">Griffith: The Ambitious Leader</h2>
+        <p class="text-lg">Griffith, the charismatic leader of the Band of the Hawk, is one of the most complex and compelling characters in Berserk. His unwavering ambition and unwavering dedication to his ideals lead him on a path of darkness and despair. From his humble beginnings as a young boy to his rise to power as the leader of the Millennium Empire, Griffith's journey is a tragic tale of ambition, betrayal, and redemption.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <div class="card">
+                <img src="./images/griffith-young.jpg" alt="Young Griffith" class="card-image">
+                <h3 class="card-title">Early Life</h3>
+                <p class="card-content">Griffith's early years were fraught with hardship and poverty. Born into difficult circumstances, he faced a challenging upbringing that fueled his drive to escape his fate.</p>
+            </div>
+            <div class="card">
+                <img src="./images/griffith-hawk.jpg" alt="Pesonality" class="card-image">
+                <h3 class="card-title">Charisma and ambition</h3>
+                <p class="card-content">Griffiths exceptional charisma and unwavering determination set him apart. His ability to inspire and lead others was evident from a young age, allowing him to overcome his origins and make a significant impact.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/griffith-hawk.jpg" alt="Griffith as Leader of the Band of the Hawk" class="card-image">
+            <h3 class="card-title">The Band of the Hawk</h3>
+            <p class="card-content">As the leader of the Band of the Hawk, Griffith's reputation as a brilliant strategist and fearless warrior grew. He led his men to victory after victory, earning the respect and admiration of his comrades and the fear of his enemies. However, his unwavering ambition would eventually lead him down a dark path.</p>
+        </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="container py-10">
+        <h2 class="section-title">Gallery</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="young.jpg" alt="Griffith Image 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="happy.jpg" alt="Griffith Image 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="GriffithSmile.png" alt="Griffith Image 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Berserk-Finale-Featured.png" alt="Griffith Image 4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="meow1.png" alt="Griffith Image 5">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="quotes" class="container py-10">
+        <h2 class="section-title">Quotes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <div class="quote">
+                <p>"A dream can make a man feel alive... or it can kill him." </p>
+                <p class="author">- Griffith</p>
+            </div>
+            <div class="quote">
+                <p>"A dream... its something you do for yourself, not for others." </p>
+                <p class="author">- Griffith</p>
+            </div>
+            <div class="quote">
+                <p>"If you are always worried about crushing the ants beneath you, you won't be able to walk." </p>
+                <p class="author">- Griffith</p>
+            </div>
+            <div class="quote">
+                <p>"In this world, is the destiny of mankind controlled by some transcendental entity or law? Is it like the hand of God hovering above? At least it is true that man has no control, even over his own will." </p>
+                <p class="author">- Griffith</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax">
+        <h2>my back hurts</h2>
+    </section>
+
+    <section id="contact" class="container py-10">
+        <h2 class="section-title">messages</h2>
+        <div class="contact">
+            <h3>this website is for ahmad</h3>
+            <h1>it didnt take me much of time</h1>
+            <h1>ur awesome dude</h1>
+            <h1>ilysm</h1>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>i hope u liked it</p>
+    </footer>
+
+    <button class="scroll-up"><i class="material-icons">arrow_upward</i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script>
+      const swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+
+      ScrollReveal().reveal('.card', { distance: '50px', duration: 1000, delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.quote', { distance: '50px', duration: 1000, delay: 200, origin: 'left' });
+      ScrollReveal().reveal('.contact', { distance: '50px', duration: 1000, delay: 200, origin: 'right' });
+
+      const scrollUp = document.querySelector('.scroll-up');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollUp.style.display = 'block';
+        } else {
+          scrollUp.style.display = 'none';
+        }
+      });
+
+      scrollUp.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      const parallax = document.querySelector('.parallax');
+      const parallaxImage = document.querySelector('.parallax img');
+
+      window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset;
+        let parallaxOffset = scrollTop / 10;
+        parallax.style.backgroundPosition = `50% ${parallaxOffset}px`;
+      });
+
+      gsap.to('.parallax h2', { y: -10, repeat: -1, yoyo: true, ease: 'power2.inOut', duration: 2 });
+    </script>
+</body>
+</html>
+
